@@ -2,12 +2,27 @@
   width: 100%;
 }
 
+.appError {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 35px;
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: red;
+}
+
 .smurfInput {
   margin: 0 auto;
   position: relative;
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 50px;
 }
 
 .error {
@@ -18,4 +33,62 @@
   color: red;
   font-weight: bold;
   margin-top: 5px;
+}
+
+.smurfList {
+  width: 70%;
+  margin: 20px auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.smurfInstance, .smurfEdit {
+  position: relative;
+  width: 30%;
+  border: 1px solid black;
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.smurfInstance > * {
+  margin-bottom: 10px;
+}
+
+.smurfInstance > *:last-child {
+  margin-bottom: 0;
+}
+
+.smurfInstance h3 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.icons {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.icons span {
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+.icons span:active {
+  transform: translateY(1px);
+}
+.icons span:first-child {
+  margin-right: 5px;
+}
+.back {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  font-size: 1.8rem;
+}
+.back:active {
+  transform: translateY(1px);
 }

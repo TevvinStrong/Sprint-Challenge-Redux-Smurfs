@@ -37,7 +37,11 @@ export default (state = myInitialState, action) => {
     case GET_SMURFS:
       return { ...state, loading: false, error: null, smurfs: action.payload };
     case ADD_SMURF:
-      return { ...state, loading: false, error: null, smurfs: [...state.smurfs, action.payload] };
+      return { ...state, loading: false, error: null, smurfs: action.payload };
+    case UPDATE_SMURF:
+      return { ...state, loading: false, error: null, smurfs: action.payload };
+    case DELETE_SMURF:
+      return { ...state, loading: false, error: null, smurfs: action.payload };
     case ERROR:
       return { ...state, loading: false, error: action.payload };
     default:
