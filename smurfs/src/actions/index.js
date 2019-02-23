@@ -23,18 +23,18 @@ export const LOADING = 'LOADING';
    D - deleteSmurf
 */
 
-export const addSmurf = smurf => dispatch => {
-  dispatch({ type: LOADING });
-  axios.post('http://localhost:3333', smurf)
-    .then(res => console.log(res))
-    .catch(err => console.log(err));
-}
-
 export const getSmurfs = () => dispatch => { // Need to figure out how to send payload of custom error response on a 422 error.
   dispatch({ type: LOADING });
   axios.get('http://localhost:3333/smurfs')
     .then(res => dispatch({ type: GET_SMURFS, payload: res.data }))
     .catch(err => dispatch({ type: ERROR, payload: 'There was an error while retrieving Smurfs.' }));
+}
+
+export const addSmurf = smurf => dispatch => {
+  dispatch({ type: LOADING });
+  axios.post('http://localhost:3333', smurf)
+    .then(res => console.log(res))
+    .catch(err => console.log(err));
 }
 
 export const updateSmurf = (id, smurf) => dispatch => {
