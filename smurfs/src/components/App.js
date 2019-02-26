@@ -1,5 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+
 import './App.css';
+//import { addSmurf } from '../actions';
+import SmurfList from './SmurfList';
+import SmurfInput from './SmurfInput';
+
 /*
  to wire this component up you're going to need a few things.
  I'll let you do this part on your own. 
@@ -10,13 +17,22 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>SMURFS! 2.0 W/ Redux</h1>
-        <div>Welcome to your Redux version of Smurfs!</div>
-        <div>Start inside of your `src/index.js` file!</div>
-        <div>Have fun!</div>
+        {this.props.error ? <div className="appError">{this.props.error}</div> : null}
+        <SmurfInput />
+        <SmurfList />
       </div>
     );
   }
 }
 
-export default App;
+App.PropTypes = {
+  error: PropTypes.string
+}
+
+const mapStateToProps = state => {
+  return {
+    error: state.error,
+  }
+}
+
+export default connect(mapStateToProps)(App);
