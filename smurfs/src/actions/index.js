@@ -32,7 +32,7 @@ export const getSmurfs = () => dispatch => { // Need to figure out how to send p
 
 export const addSmurf = smurf => dispatch => {
   dispatch({ type: LOADING });
-  axios.post('http://localhost:3333', smurf)
+  axios.post('http://localhost:3333/smurfs', smurf)
     .then(res => console.log(res))
     .catch(err => console.log(err));
 }
